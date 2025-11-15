@@ -8,10 +8,25 @@
     <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
 
     <style>
-        body {
+        :root {
+            --tg-viewport-height: 100vh; 
+            --tg-viewport-stable-height: 100vh;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
             flex: 1 1 auto;
             display: flex;
             flex-direction: column;
+            height: var(--tg-viewport-height);
+        }
+
+        body {
             background: var(--tg-theme-bg-color);
             color: var(--tg-theme-text-color);
             font-family: Roboto, -apple-system, "apple color emoji", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -39,6 +54,10 @@
         }
 
         .section {
+            margin-top: var(--tg-content-safe-area-inset-top);
+            margin-left: var(--tg-content-safe-area-inset-left);
+            margin-right: var(--tg-content-safe-area-inset-right);
+            margin-bottom: var(--tg-content-safe-area-inset-bottom);
             background-color: var(--tg-theme-section-bg-color);
         }
 
@@ -79,12 +98,14 @@
         }
 
         .bottom-bar {
+            width: 100%;
             display: flex;
             padding: 1rem;
             background-color: var(--tg-theme-bottom-bar-bg-color);
         }
 
-        .bottom-bar > * {
+        .bottom-bar .button {
+            width: 100%;
             flex: 1;
         }
     </style>
@@ -106,14 +127,17 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+        
+        <div class="section">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+        </div>
     </div>
-    <div class="button-bar">
+    <div class="bottom-bar">
         <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">submit</button>
     </div>
 </body>
