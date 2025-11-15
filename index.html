@@ -49,8 +49,8 @@
             color: var(--tg-theme-link-color) !important;
         }
 
-        .secondary-block {
-            background-color: var(--tg-theme-secondary-bg-color);
+        .secondary-bg {
+            background-color: var(--tg-theme-secondary-bg-color) !important;
         }
 
         .safe {
@@ -61,11 +61,22 @@
         }
 
         .section {
-            margin-top: var(--tg-content-safe-area-inset-top);
-            margin-left: var(--tg-content-safe-area-inset-left);
-            margin-right: var(--tg-content-safe-area-inset-right);
-            margin-bottom: var(--tg-content-safe-area-inset-bottom);
+            padding: 1.25rem;
+        }
+
+        .section-header {
+            color: var(--tg-theme-section-header-text-color);
+        }
+
+        .section-content {
+            border-radius: 10px;
             background-color: var(--tg-theme-section-bg-color);
+        }
+
+        .section-separator {
+            width: 100%;
+            height: 1px;
+            background-color: var(--tg-theme-section-separator-color);
         }
 
         .scrollable {
@@ -128,22 +139,28 @@
     </script>
 
     <div class="scrollable">
-        <div class="safe">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum mollitia vel dignissimos asperiores blanditiis ut itaque nulla incidunt laudantium, eius doloribus enim hic consectetur necessitatibus ad voluptates. Molestiae, eum temporibus!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dignissimos at, saepe error non facere repellendus suscipit perferendis quisquam, accusantium nisi numquam, atque ab laudantium labore. Similique dolores delectus suscipit.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+        <div class="section">
+            <div class="section-header">ADD-ONS</div>
+            <div class="section-content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum mollitia vel dignissimos asperiores blanditiis ut itaque nulla incidunt laudantium, eius doloribus enim hic consectetur necessitatibus ad voluptates. Molestiae, eum temporibus!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dignissimos at, saepe error non facere repellendus suscipit perferendis quisquam, accusantium nisi numquam, atque ab laudantium labore. Similique dolores delectus suscipit.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            </div>
         </div>
 
         <div class="section">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            <div class="section-header">ADD-ONS</div>
+            <div class="section-content secondary-bg">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum mollitia vel dignissimos asperiores blanditiis ut itaque nulla incidunt laudantium, eius doloribus enim hic consectetur necessitatibus ad voluptates. Molestiae, eum temporibus!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dignissimos at, saepe error non facere repellendus suscipit perferendis quisquam, accusantium nisi numquam, atque ab laudantium labore. Similique dolores delectus suscipit.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+            </div>
         </div>
     </div>
     <div class="bottom-bar">
