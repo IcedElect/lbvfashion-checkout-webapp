@@ -108,6 +108,7 @@
             display: block;
             margin-bottom: 0.5rem;
             color: var(--tg-theme-section-header-text-color);
+            font-size: 0.875rem;
         }
 
         .section-content {
@@ -174,7 +175,7 @@
         .input-holder {
             border: none;
             border-radius: 10px;
-            height: 2.25rem;
+            height: 2.5rem;
             background-color: var(--tg-theme-bottom-bar-bg-color);
             display: flex;
             width: 100%;
@@ -184,8 +185,14 @@
         .input-holder > input {
             height: 100%;
             width: 100%;
-            padding: 0.5rem;
+            padding: 1rem;
             background: none;
+            font-size: 1rem;
+            color: var(--tg-theme-text-color);
+        }
+
+        .input-holder > input::placeholder {
+            color: var(--tg-theme-section-header-text-color);
         }
 
         input {
