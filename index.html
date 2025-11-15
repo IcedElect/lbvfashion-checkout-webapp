@@ -178,6 +178,7 @@
             border-radius: 8px;
             height: 2.5rem;
             background-color: var(--tg-theme-bottom-bar-bg-color);
+            background-color: var(--tg-theme-section-separator-color);
             display: flex;
             width: 100%;
             overflow: hidden;
@@ -264,14 +265,9 @@
         const maskOptions = {
             mask: [
                 { mask: '+{44} 0000 000000' },
-                { mask: '0 0000 000000', lazy: false },
-            ],
-            prepare: (str) => {
-                if (str.startsWith('0')) {
-                return '+44 ' + str.slice(1);
-                }
-                return str;
-            }
+                { mask: '+{44} 000 0000 0000' },
+                { mask: '+{44} 00 0000 0000' },
+            ]
         };
         const mask = IMask(element, maskOptions);
     </script>
