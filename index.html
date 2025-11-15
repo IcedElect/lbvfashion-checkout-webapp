@@ -209,6 +209,8 @@
             gap: 1rem;
         }
     </style>
+
+    <script src="https://unpkg.com/imask"></script>
 </head>
 <body>
     <script>
@@ -232,6 +234,14 @@
                         <input type="text" placeholder="Last Name">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-holder">
+                        <input type="text" id="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="input-holder">
+                        <input type="email" placeholder="Email">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -250,5 +260,13 @@
     <div class="bottom-bar">
         <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">SUBMIT</button>
     </div>
+
+    <script>
+        const element = document.getElementById('input#phone');
+        const maskOptions = {
+            mask: '+{44} 00[0] 0000 0000'
+        };
+        const mask = IMask(element, maskOptions);
+    </script>
 </body>
 </html>
