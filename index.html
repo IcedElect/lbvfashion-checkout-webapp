@@ -6,6 +6,80 @@
     <title>Checkout</title>
 
     <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+
+    <style>
+        body {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            background: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+        }
+
+        .hint {
+            color: var(--tg-theme-hint-color);
+        }
+
+        .accent {
+            color: var(--tg-theme-accent-text-color);
+        }
+
+        .destructive {
+            color: var(--tg-theme-destructive-text-color);
+        }
+
+        a {
+            color: var(--tg-theme-link-color) !important;
+        }
+
+        .secondary-block {
+            background-color: var(--tg-theme-secondary-bg-color);
+        }
+
+        .section {
+            background-color: var(--tg-theme-section-bg-color);
+        }
+
+        .scrollable {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            max-height: 100%;
+            position: absolute;
+            inset: 0;
+            -webkit-overflow-scrolling: touch;
+
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-y: overlay;
+            scrollbar-width: none;
+        }
+
+        .button {
+            flex: 0 0 auto;
+            width: auto;
+            height: 3rem;
+            padding: 0;
+            border-radius: 10px;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+            background-color: var(--tg-theme-button-color);
+            color: var(--tg-theme-button-text-color);
+        }
+
+        .header {
+            background-color: var(--tg-theme-header-bg-color);
+        }
+
+        .bottom-bar {
+            padding: 1rem;
+            background-color: var(--tg-theme-bottom-bar-bg-color);
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -16,6 +90,14 @@
             "postal_code": "11111"
         }
     </script>
-    <button onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">submit</button>
+
+    <div class="scrollable">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum mollitia vel dignissimos asperiores blanditiis ut itaque nulla incidunt laudantium, eius doloribus enim hic consectetur necessitatibus ad voluptates. Molestiae, eum temporibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dignissimos at, saepe error non facere repellendus suscipit perferendis quisquam, accusantium nisi numquam, atque ab laudantium labore. Similique dolores delectus suscipit.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto deleniti atque suscipit dolorem vitae ab natus temporibus! Nihil, omnis, quis, consequatur similique eos officiis amet laboriosam inventore dolore labore veniam!
+    </div>
+    <div class="button-bar">
+        <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">submit</button>
+    </div>
 </body>
 </html>
