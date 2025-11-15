@@ -8,7 +8,12 @@
     <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
 </head>
 <body>
-    <button onclick="window.Telegram.WebApp.sendData('{\"test\":123}')">data</button>
+    <script>
+        const data = {
+            "test": 123
+        }
+    </script>
+    <button onclick="window.Telegram.WebApp.sendData(data)">data</button>
     <button onclick="window.Telegram.WebApp.close()">Close</button>
 </body>
 </html>
