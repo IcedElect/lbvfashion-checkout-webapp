@@ -262,9 +262,18 @@
     </div>
 
     <script>
-        const element = document.getElementById('input#phone');
+        const element = document.getElementById('phone');
         const maskOptions = {
-            mask: '+{44} 00[0] 0000 0000'
+            mask: [
+                { mask: '+{44} 0000 000000' },
+                { mask: '0 0000 000000', lazy: false },
+            ],
+            prepare: (str) => {
+                if (str.startsWith('0')) {
+                return '+44 ' + str.slice(1);
+                }
+                return str;
+            }
         };
         const mask = IMask(element, maskOptions);
     </script>
