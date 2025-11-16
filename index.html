@@ -202,7 +202,7 @@
             width: 100%;
         }
 
-        input {
+        input, select {
             flex: 1;
             border: none;
             padding: 0;
@@ -222,6 +222,20 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(1, 1fr);
             gap: 1rem;
+        }
+
+        #getaddress_input, #getaddress_button {
+            display: none;
+        }
+
+        select {
+            display: block;
+            margin-top: 1rem;
+            max-width: 100%;
+            padding-right: 3rem;
+            -webkit-appearance: none;
+            appearance: none;
+            border: none;
         }
     </style>
 
@@ -259,18 +273,11 @@
         </div>
 
         <div class="section">
-            <div class="section-header">TEST</div>
-            <div class="section-content">
-                <input class="input-holder">
-            </div>
-        </div>
-
-        <div class="section">
             <div class="section-header">SHIPPING ADDRESS</div>
             <div class="section-content secondary-bg">
                 <div class="input-holder" style="display: flex">
                     <input id="postcode" type="text" placeholder="Postcode">
-                    <span class="input-button accent">Find Address</span>
+                    <span id="find-button" class="input-button accent">Find Address</span>
                 </div>
 
                 <div id="postcode_lookup"></div>
@@ -284,25 +291,49 @@
 
     <script src="https://cdn.getaddress.io/scripts/getaddress-3.0.17.min.js"></script>
     <script>
-        getAddress.locationNative(
-            'postcode',
-            'lVPlVrR5SEG7AMTYzqTBgQ48741'
+        document.getElementById('find-button').addEventListener('click', function (e) {
+            let value = document.getElementById('postcode').value;
+
+            document.getElementById('getaddress_input').value = value;
+            document.getElementById('getaddress_button').click();
+        })
+
+        getAddress.find(
+            'postcode_lookup',
+            'lVPlVrR5SEG7AMTYzqTBgQ48741',
+            {
+                output_fields: {
+                    input: {
+                        id: 'getaddress_input'
+                    },
+                    button:{
+                        id: 'getaddress_button',
+                    },
+                    dropdown:{
+                        id: 'getaddress_dropdown',
+                        class: 'input-holder',
+                    },
+                    error_message:{
+                        id: 'getaddress_error_message',
+                    },
+                }
+            },
         );
 
-        document.addEventListener("getaddress-location-suggestions", function(e){
+        document.addEventListener("getaddress-find-suggestions", function(e){
             console.log(e.suggestions);
         })
 
-        document.addEventListener("getaddress-location-suggestions-failed", function(e){
+        document.addEventListener("getaddress-find-suggestions-failed", function(e){
             console.log(e.status);
             console.log(e.message);
         })
 
-        document.addEventListener("getaddress-location-selected", function(e){
-            console.log(e.location);
+        document.addEventListener("getaddress-find-address-selected", function(e){
+            console.log(e.address);
         })
 
-        document.addEventListener("getaddress-location-selected-failed", function(e){
+        document.addEventListener("getaddress-find-address-selected-failed", function(e){
             console.log(e.status);
             console.log(e.message);
         })
