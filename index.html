@@ -258,12 +258,21 @@
         </div>
 
         <div class="section">
+            <div class="section-header">TEST</div>
+            <div class="section-content">
+                <input class="input-holder">
+            </div>
+        </div>
+
+        <div class="section">
             <div class="section-header">SHIPPING ADDRESS</div>
             <div class="section-content secondary-bg">
                 <div class="input-holder" style="display: flex">
-                    <input type="text" placeholder="Postcode">
+                    <input id="postcode" type="text" placeholder="Postcode">
                     <span class="input-button accent">Find Address</span>
                 </div>
+
+                <div id="postcode_lookup"></div>
             </div>
         </div>
     </div>
@@ -271,6 +280,32 @@
         <button class="button" onclick="window.Telegram.WebApp.showAlert('The form information is incorrect. Please complete all required fields.')">SUBMIT</button>
         <!-- <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">SUBMIT</button> -->
     </div>
+
+    <script src="https://cdn.getaddress.io/scripts/getaddress-3.0.17.min.js"></script>
+    <script>
+        getAddress.locationNative(
+            'postcode',
+            'lVPlVrR5SEG7AMTYzqTBgQ48741'
+        );
+
+        document.addEventListener("getaddress-location-suggestions", function(e){
+            console.log(e.suggestions);
+        })
+
+        document.addEventListener("getaddress-location-suggestions-failed", function(e){
+            console.log(e.status);
+            console.log(e.message);
+        })
+
+        document.addEventListener("getaddress-location-selected", function(e){
+            console.log(e.location);
+        })
+
+        document.addEventListener("getaddress-location-selected-failed", function(e){
+            console.log(e.status);
+            console.log(e.message);
+        })
+    </script>
 
     <script>
         const element = document.getElementById('phone');
