@@ -332,6 +332,8 @@
 
             e.target.innerHTML = "Loading..."
             e.target.setAttribute("disabled", true)
+            e.target.classList.add('hint')
+            e.target.classList.remove('accent')
 
             document.getElementById('getaddress_input').value = value;
             document.getElementById('getaddress_button').click();
@@ -363,6 +365,9 @@
 
             button.innerHTML = "Find Address";
             button.removeAttribute("disabled")
+            button.classList.remove('hint')
+            button.classList.add('accent')
+
             console.log(e.suggestions);
         })
 
