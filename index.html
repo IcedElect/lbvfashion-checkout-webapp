@@ -57,6 +57,7 @@
         :root {
             --tg-viewport-height: 100vh; 
             --tg-viewport-stable-height: 100vh;
+            --tg-theme-bg-color: gray;
         }
 
         * {
@@ -173,13 +174,13 @@
             flex: 1;
         }
 
-        .input-holder {
+        .input-holder, #getaddress_dropdown {
             border: none;
             border-radius: 8px;
             height: 2.5rem;
-            background-color: var(--tg-theme-bottom-bar-bg-color);
-            background-color: var(--tg-theme-section-separator-color);
-            background-color: var(--tg-theme-bg-color);
+            background: var(--tg-theme-bottom-bar-bg-color);
+            background: var(--tg-theme-section-separator-color);
+            background: var(--tg-theme-bg-color);
             display: flex;
             width: 100%;
             overflow: hidden;
@@ -311,7 +312,6 @@
                     },
                     dropdown:{
                         id: 'getaddress_dropdown',
-                        class: 'input-holder',
                     },
                     error_message:{
                         id: 'getaddress_error_message',
