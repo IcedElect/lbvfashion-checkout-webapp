@@ -101,11 +101,12 @@
         }
 
         .section {
-            padding: 1rem;
+            padding: 0.75rem 1rem;
         }
 
         .section-header {
             display: block;
+            margin-top: 0.25rem;
             margin-bottom: 0.5rem;
             color: var(--tg-theme-section-header-text-color);
             font-size: 0.75rem;
@@ -258,16 +259,16 @@
             <div class="section-content">
                 <div class="grid">
                     <div class="input-holder">
-                        <input type="text" placeholder="First Name">
+                        <input type="text" name="first_name" placeholder="First Name">
                     </div>
                     <div class="input-holder">
-                        <input type="text" placeholder="Last Name">
+                        <input type="text" name="last_name" placeholder="Last Name">
                     </div>
                     <div class="input-holder">
-                        <input type="text" id="phone" placeholder="Phone Number">
+                        <input type="text" name="phone" id="phone" placeholder="Phone Number">
                     </div>
                     <div class="input-holder">
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email">
                     </div>
                 </div>
             </div>
@@ -277,7 +278,7 @@
             <div class="section-header">SHIPPING ADDRESS</div>
             <div class="section-content secondary-bg">
                 <div class="input-holder" style="display: flex">
-                    <input id="postcode" type="text" placeholder="Postcode">
+                    <input id="postcode" type="text" name="postcode" placeholder="Postcode">
                     <span id="find-button" class="input-button accent">Find Address</span>
                 </div>
 
@@ -289,19 +290,19 @@
             <div class="section-content secondary-bg">
                 <div class="grid">
                     <div class="input-holder" style="grid-column: span 2 / span 2;">
-                        <input id="country" type="text" placeholder="Country">
+                        <input id="country" type="text" name="country" placeholder="Country">
                     </div>
 
                     <div class="input-holder" style="grid-column: span 2 / span 2;">
-                        <input id="city" type="text" placeholder="Town / City">
+                        <input id="district" type="text" name="city" placeholder="Town / City">
                     </div>
 
                     <div class="input-holder">
-                        <input id="line_1" type="text" placeholder="Street name and house number">
+                        <input id="line_1" type="text" name="line_1" placeholder="Street name and house number">
                     </div>
 
                     <div class="input-holder">
-                        <input id="line_2" type="text" placeholder="Suit, unit, etc.">
+                        <input id="line_2" type="text" name="line_2" placeholder="Suit, unit, etc.">
                     </div>
                 </div>
             </div>
@@ -316,6 +317,9 @@
     <script>
         document.getElementById('find-button').addEventListener('click', function (e) {
             let value = document.getElementById('postcode').value;
+
+            e.target.innerHTML = "Loading..."
+            e.target.setAttribute("disabled", true)
 
             document.getElementById('getaddress_input').value = value;
             document.getElementById('getaddress_button').click();
@@ -343,6 +347,10 @@
         );
 
         document.addEventListener("getaddress-find-suggestions", function(e){
+            let button = document.getElementById('find-button');
+
+            button.innerHTML = "Find Address";
+            button.removeAttribute("disabled")
             console.log(e.suggestions);
         })
 
