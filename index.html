@@ -253,65 +253,73 @@
         }
     </script>
 
-    <div class="scrollable">
-        <div class="section">
-            <div class="section-header">CONTACT INFORMATION</div>
-            <div class="section-content">
-                <div class="grid">
-                    <div class="input-holder">
-                        <input type="text" name="first_name" placeholder="First Name">
+    <form onsubmit="submit">
+        <div class="scrollable">
+            <div class="section">
+                <div class="section-header">CONTACT INFORMATION</div>
+                <div class="section-content">
+                    <div class="grid">
+                        <div class="input-holder">
+                            <input type="text" name="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="last_name" placeholder="Last Name" required>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
                     </div>
-                    <div class="input-holder">
-                        <input type="text" name="last_name" placeholder="Last Name">
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">SHIPPING ADDRESS</div>
+                <div class="section-content secondary-bg">
+                    <div class="input-holder" style="display: flex">
+                        <input id="postcode" type="text" name="postcode" placeholder="Postcode" required>
+                        <span id="find-button" class="input-button accent">Find Address</span>
                     </div>
-                    <div class="input-holder">
-                        <input type="text" name="phone" id="phone" placeholder="Phone Number">
-                    </div>
-                    <div class="input-holder">
-                        <input type="email" name="email" placeholder="Email">
+
+                    <div id="postcode_lookup"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-content secondary-bg">
+                    <div class="grid">
+                        <div class="input-holder" style="grid-column: span 2 / span 2;">
+                            <input id="country" type="text" name="country" placeholder="Country">
+                        </div>
+
+                        <div class="input-holder" style="grid-column: span 2 / span 2;">
+                            <input id="district" type="text" name="city" placeholder="Town / City" required>
+                        </div>
+
+                        <div class="input-holder">
+                            <input id="line_1" type="text" name="line_1" placeholder="Street name and house number" required>
+                        </div>
+
+                        <div class="input-holder">
+                            <input id="line_2" type="text" name="line_2" placeholder="Suit, unit, etc.">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="section">
-            <div class="section-header">SHIPPING ADDRESS</div>
-            <div class="section-content secondary-bg">
-                <div class="input-holder" style="display: flex">
-                    <input id="postcode" type="text" name="postcode" placeholder="Postcode">
-                    <span id="find-button" class="input-button accent">Find Address</span>
-                </div>
-
-                <div id="postcode_lookup"></div>
-            </div>
+        <div class="bottom-bar">
+            <button type="submit" class="button">SUBMIT</button>
+            <!-- <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">SUBMIT</button> -->
         </div>
+    </form>
 
-        <div class="section">
-            <div class="section-content secondary-bg">
-                <div class="grid">
-                    <div class="input-holder" style="grid-column: span 2 / span 2;">
-                        <input id="country" type="text" name="country" placeholder="Country">
-                    </div>
-
-                    <div class="input-holder" style="grid-column: span 2 / span 2;">
-                        <input id="district" type="text" name="city" placeholder="Town / City">
-                    </div>
-
-                    <div class="input-holder">
-                        <input id="line_1" type="text" name="line_1" placeholder="Street name and house number">
-                    </div>
-
-                    <div class="input-holder">
-                        <input id="line_2" type="text" name="line_2" placeholder="Suit, unit, etc.">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bottom-bar">
-        <button class="button" onclick="window.Telegram.WebApp.showAlert('The form information is incorrect. Please complete all required fields.')">SUBMIT</button>
-        <!-- <button class="button" onclick="window.Telegram.WebApp.sendData(JSON.stringify(data))">SUBMIT</button> -->
-    </div>
+    <script>
+        submit(e => {
+            window.Telegram.WebApp.showAlert('The form information is incorrect. Please complete all required fields.')
+        })
+    </script>
 
     <script src="https://cdn.getaddress.io/scripts/getaddress-3.0.17.min.js"></script>
     <script>
